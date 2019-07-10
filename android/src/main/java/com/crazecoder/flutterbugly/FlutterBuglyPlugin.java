@@ -107,6 +107,7 @@ public class FlutterBuglyPlugin implements MethodCallHandler {
             if (call.hasArgument("userId")) {
                 String userId = call.argument("userId");
                 Bugly.setUserId(activity.getApplicationContext(), userId);
+                CrashReport.setUserId(userId);
             }
             result(null);
         } else if (call.method.equals("setUserTag")) {
